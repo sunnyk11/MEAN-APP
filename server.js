@@ -8,7 +8,7 @@ app.set('port',port);
 // below code is used when we are not using express js
 /* const server = http.createServer((req,res) => {
 res.end('This is my first program');
-}); */
+}
 
 
 server.listen(port);
