@@ -1,0 +1,34 @@
+<!-- <mat-card>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="enteredTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
+  </mat-form-field>
+  <button
+  mat-raised-button color="accent"
+   (click)="onAddPost()">Save Post</button>
+</mat-card>
+ -->
+
+ <mat-card>
+
+   <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input matInput type="text" ngModel="" name="title" placeholder="Post Title" required minlength="3" #title="ngModel">
+      <!--if we dont write #title = ngModel we can do the Checking by writing
+      *ngIf="postForm.getControl('title').invalid" which is a little lengthy
+      -->
+
+      <mat-error *ngIf="title.invalid">Please Enter a title</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput rows="6" placeholder="Post Content" ngModel="" name="content" #content="ngModel" required></textarea>
+      <mat-error *ngIf="content.invalid">Please Enter Some Content</mat-error>
+    </mat-form-field>
+
+    <button
+    mat-raised-button color="accent" type="submit"
+     >Save Post</button>
+    </form>
+  </mat-card>

@@ -1,0 +1,11 @@
+/* the host css is used to style the complete elemet or you can say complete component in angular language */
+/*only using host css wont make any change in css , you have to make the display:block to apply changes */
+
+:host{
+  display: block;
+  margin-top: 1rem;
+}
+
+.info-text{
+  text-align: center;
+}
